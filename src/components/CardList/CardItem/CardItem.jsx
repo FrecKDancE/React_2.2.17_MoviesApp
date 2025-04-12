@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react"
-import { format } from "date-fns"
-import { Rate } from "antd"
+import React, { useState, useEffect } from 'react';
+import { format } from 'date-fns';
+import { Rate } from 'antd';
 
-import "./CardItem.scss"
+import './CardItem.scss';
 
 const CardItem = ({
   movie,
@@ -14,45 +14,45 @@ const CardItem = ({
   removeRatedMovie,
   rating,
 }) => {
-  const TRIM_LENGTH = 200
-  const [currentRating, setCurrentRating] = useState(rating || 0)
+  const TRIM_LENGTH = 200;
+  const [currentRating, setCurrentRating] = useState(rating || 0);
 
   const getTrimText = (text, length) => {
     if (text.length > length) {
-      return text.slice(0, text.indexOf(" ", length)) + "..."
+      return text.slice(0, text.indexOf(' ', length)) + '...';
     }
-    return text
-  }
+    return text;
+  };
 
   const rateOnChange = (value) => {
-    setCurrentRating(value)
+    setCurrentRating(value);
     if (value === 0) {
-      deleteRating(guestId, movie.id)
-      removeRatedMovie(movie.id)
+      deleteRating(guestId, movie.id);
+      removeRatedMovie(movie.id);
     } else {
-      postRating(guestId, movie.id, value)
-      addRatedMovie(movie.id, value)
+      postRating(guestId, movie.id, value);
+      addRatedMovie(movie.id, value);
     }
-  }
+  };
 
   useEffect(() => {
-    setCurrentRating(rating || 0)
-  }, [rating])
+    setCurrentRating(rating || 0);
+  }, [rating]);
 
-  const genres = genresList.filter((item) => movie.genre_ids.includes(item.id))
+  const genres = genresList.filter((item) => movie.genre_ids.includes(item.id));
 
-  const voteAverage = movie.vote_average.toFixed(1)
+  const voteAverage = movie.vote_average.toFixed(1);
 
-  let ratingClass
+  let ratingClass;
 
   if (voteAverage < 3) {
-    ratingClass = "rating__low"
+    ratingClass = 'rating__low';
   } else if (voteAverage < 5) {
-    ratingClass = "rating__middle"
+    ratingClass = 'rating__middle';
   } else if (voteAverage < 7) {
-    ratingClass = "rating__high"
+    ratingClass = 'rating__high';
   } else {
-    ratingClass = "rating__highest"
+    ratingClass = 'rating__highest';
   }
 
   return (
@@ -62,7 +62,7 @@ const CardItem = ({
         src={
           movie.poster_path
             ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-            : "https://artworks.thetvdb.com/banners/movies/292873/posters/AvgrHw6YEehlNxVZNVDoVz2Huht.jpg"
+            : 'https://artworks.thetvdb.com/banners/movies/292873/posters/AvgrHw6YEehlNxVZNVDoVz2Huht.jpg'
         }
         alt="poster"
       />
@@ -72,9 +72,7 @@ const CardItem = ({
           <span className={`rating ${ratingClass}`}>{voteAverage}</span>
         </div>
         <span className="card-item__date">
-          {movie.release_date
-            ? format(new Date(movie.release_date), "MMMM dd, yyyy")
-            : "Release date is unknown..."}
+          {movie.release_date ? format(new Date(movie.release_date), 'MMMM dd, yyyy') : 'Release date is unknown...'}
         </span>
         <ul className="card-item__genre-list">
           {genres.map((item) => (
@@ -84,20 +82,12 @@ const CardItem = ({
           ))}
         </ul>
         <p className="card-item__description">
-          {movie.overview
-            ? getTrimText(movie.overview, TRIM_LENGTH)
-            : "No description..."}
+          {movie.overview ? getTrimText(movie.overview, TRIM_LENGTH) : 'No description...'}
         </p>
-        <Rate
-          className="rate"
-          count={10}
-          allowHalf
-          onChange={rateOnChange}
-          defaultValue={currentRating}
-        />
+        <Rate className="rate" count={10} allowHalf onChange={rateOnChange} defaultValue={currentRating} />
       </div>
     </li>
-  )
-}
+  );
+};
 
-export default CardItem
+export default CardItem;

@@ -1,5 +1,5 @@
-import React from "react"
-import { ConfigProvider, Pagination } from "antd"
+import React from 'react'
+import { ConfigProvider, Pagination } from 'antd'
 
 const PaginationUI = ({ totalItems, onChange, pageSize = 20, current }) => {
   return (
@@ -7,8 +7,8 @@ const PaginationUI = ({ totalItems, onChange, pageSize = 20, current }) => {
       theme={{
         components: {
           Pagination: {
-            itemActiveBg: "#1890FF",
-            colorPrimary: "#ffffff",
+            itemActiveBg: '#1890FF',
+            colorPrimary: '#ffffff',
           },
         },
       }}
