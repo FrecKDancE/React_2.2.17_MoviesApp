@@ -1,17 +1,17 @@
-import React from 'react'
-import { Tabs } from 'antd'
+import React from "react"
+import { Tabs } from "antd"
 
-import './Header.scss'
+import "./Header.scss"
 
 const Header = ({ onChangeTabs }) => {
   const items = [
     {
-      key: 'Search',
-      label: 'Search',
+      key: "Search",
+      label: "Search",
     },
     {
-      key: 'Rated',
-      label: 'Rated',
+      key: "Rated",
+      label: "Rated",
     },
   ]
   return (
@@ -19,7 +19,7 @@ const Header = ({ onChangeTabs }) => {
       <Tabs
         defaultActiveKey="1"
         items={items}
-        tabBarStyle={{ fontFamily: 'Inter, sans-serif', margin: '0 auto 20px' }}
+        tabBarStyle={{ fontFamily: "Inter, sans-serif", margin: "0 auto 20px" }}
         tabBarGutter={16}
         onChange={onChangeTabs}
       />

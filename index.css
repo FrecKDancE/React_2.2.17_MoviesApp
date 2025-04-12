@@ -28,7 +28,7 @@ body {
   display: flex;
 }
 
-#root{
+#root {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -71,8 +71,8 @@ button:focus-visible {
   }
 }
 
-@media (min-width: 1440px){
-  #root{
+@media (min-width: 1440px) {
+  #root {
     width: 1440px;
     margin-left: auto;
     margin-right: auto;

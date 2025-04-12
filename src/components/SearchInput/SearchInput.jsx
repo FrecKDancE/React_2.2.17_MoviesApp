@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState } from "react"
 
-import './SearchInput.scss';
+import "./SearchInput.scss"
 
 const SearchInput = ({ searchMovies }) => {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState("")
 
   const onChange = (evt) => {
-    setValue(evt.target.value);
-    searchMovies(evt.target.value);
-  };
+    setValue(evt.target.value)
+    searchMovies(evt.target.value)
+  }
 
   return (
     <form className="form" onSubmit={(evt) => evt.preventDefault()}>
@@ -19,7 +19,7 @@ const SearchInput = ({ searchMovies }) => {
         onChange={onChange}
       />
     </form>
-  );
-};
+  )
+}
 
-export default SearchInput;
+export default SearchInput

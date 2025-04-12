@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react"
 
-import './NoInternet.scss'
+import "./NoInternet.scss"
 
 const NoInternet = () => {
   return <p className="no-internet">Check your internet connection...</p>

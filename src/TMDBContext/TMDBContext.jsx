@@ -1,5 +1,5 @@
-import React from 'react'
+import React from "react";
 
-const { Provider: APIProvider, Consumer: APIConsumer } = React.createContext()
+const { Provider: APIProvider, Consumer: APIConsumer } = React.createContext();
 
-export { APIProvider, APIConsumer }
+export { APIProvider, APIConsumer };
