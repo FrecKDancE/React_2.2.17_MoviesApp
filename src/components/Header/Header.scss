@@ -3,8 +3,13 @@
   margin: 0 auto;
 
   background-color: #ffffff;
+  
+  @media screen and (max-width: 600px){
+    width: 420px;
+  }
 }
 
 .asd {
   margin: 0 auto;
 }
+

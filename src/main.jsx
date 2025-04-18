@@ -13,5 +13,5 @@ createRoot(document.getElementById('root')).render(
     <Offline>
       <NoInternet />
     </Offline>
-    </StrictMode>
+  </StrictMode>
 )

@@ -55,6 +55,15 @@ const CardItem = ({
     ratingClass = 'rating__highest';
   }
 
+   let longClass;
+
+   if (movie.title.length > 20) {
+    longClass = 'long'
+   }
+   else{
+    longClass = 'normal'
+   }
+
   return (
     <li className="card-item">
       <img
@@ -67,7 +76,7 @@ const CardItem = ({
         alt="poster"
       />
       <div className="card-item__wrapper">
-        <div className="card-item__header">
+        <div className={`card-item__header ${longClass}`}>
           <h2 className="card-item__title">{movie.title}</h2>
           <span className={`rating ${ratingClass}`}>{voteAverage}</span>
         </div>

@@ -10,4 +10,10 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+
+    
+  @media screen and (max-width: 600px){
+    width: 420px;
+    padding: 0 16px 10px;
+  }
 }
