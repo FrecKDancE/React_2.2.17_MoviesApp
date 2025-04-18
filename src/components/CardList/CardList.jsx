@@ -87,6 +87,8 @@ const CardList = ({ query, tab, guestId }) => {
   }, []);
 
   useEffect(() => {
+    setIsLoading(true)
+    setMovies([])
     if (tab === 'Search') {
       debounceGetMovies(query, currentPage);
     } else {
